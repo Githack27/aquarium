@@ -1,0 +1,168 @@
+/**
+ * FAQCard Component Styles
+ * Expandable FAQ item with smooth height animation
+ */
+
+.card {
+  border: 1px solid var(--color-light);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: white;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  width: 100%;
+  padding: 1.25rem;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.header:hover {
+  background-color: var(--color-light);
+}
+
+.header:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.question {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin: 0;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.answerContainer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: var(--color-light);
+}
+
+.answer {
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  font-size: 0.95rem;
+  color: var(--color-medium);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+  .card {
+    margin-bottom: 0.75rem;
+    border-radius: 0.375rem;
+  }
+
+  .header {
+    padding: 1rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .question {
+    font-size: 0.95rem;
+  }
+
+  .answer {
+    padding: 0 1rem 1rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .chevron {
+    width: 20px;
+    height: 20px;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chevron svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+  .card {
+    margin-bottom: 0.5rem;
+  }
+
+  .header {
+    padding: 0.875rem;
+    min-height: 44px;
+  }
+
+  .question {
+    font-size: 0.9rem;
+  }
+
+  .answer {
+    padding: 0 0.875rem 0.875rem 0.875rem;
+    font-size: 0.85rem;
+  }
+
+  .chevron {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+    opacity: 1;
+  }
+
+  .header,
+  .answerContainer,
+  .chevron {
+    transition: none;
+  }
+
+  .chevron.open {
+    transform: none;
+  }
+}

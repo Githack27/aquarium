@@ -1,0 +1,112 @@
+/**
+ * FeatureCard Component Styles
+ * Card displaying feature icon, title, and description
+ */
+
+.card {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(45, 55, 72, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-light);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(45, 55, 72, 0.15);
+  border-color: var(--color-primary);
+}
+
+.iconContainer {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  font-size: 3rem;
+  display: inline-block;
+  line-height: 1;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: var(--color-medium);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+  .card {
+    padding: 1.5rem;
+    min-height: 44px;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+  .card {
+    padding: 1.25rem;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+    opacity: 1;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}

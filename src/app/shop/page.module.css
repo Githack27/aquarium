@@ -1,0 +1,161 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Shop Section */
+.shopSection {
+  padding: 3rem 0;
+  background-color: #ffffff;
+}
+
+/* Search Container */
+.searchContainer {
+  margin-bottom: 2rem;
+  animation: fadeIn 0.6s ease-out 0.2s both;
+}
+
+/* Product Count */
+.productCountContainer {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.6s ease-out 0.3s both;
+}
+
+.productCount {
+  font-size: 0.95rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+/* Products Grid */
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+/* No Results Message */
+.noResults {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f7fafc;
+  border-radius: 0.5rem;
+  animation: fadeIn 0.6s ease-out 0.3s both;
+}
+
+.noResultsText {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.noResultsSubtext {
+  font-size: 0.95rem;
+  color: #718096;
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .productsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .shopSection {
+    padding: 2rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .productsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .productCountContainer {
+    margin-bottom: 1.5rem;
+  }
+
+  .productCount {
+    font-size: 0.9rem;
+  }
+
+  .noResults {
+    padding: 3rem 1.5rem;
+  }
+
+  .noResultsText {
+    font-size: 1.1rem;
+  }
+
+  .noResultsSubtext {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .shopSection {
+    padding: 1.5rem 0;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .productsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .searchContainer {
+    margin-bottom: 1.5rem;
+  }
+
+  .productCountContainer {
+    margin-bottom: 1rem;
+  }
+
+  .productCount {
+    font-size: 0.85rem;
+  }
+
+  .noResults {
+    padding: 2rem 1rem;
+  }
+
+  .noResultsText {
+    font-size: 1rem;
+  }
+
+  .noResultsSubtext {
+    font-size: 0.85rem;
+  }
+}

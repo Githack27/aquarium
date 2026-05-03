@@ -1,0 +1,56 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* FAQ Section */
+.faqSection {
+  padding: 4rem 0;
+  background-color: #ffffff;
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .faqSection {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .faqSection {
+    padding: 2.5rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faqSection {
+    padding: 1.5rem 0;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .faqSection {
+    animation: none;
+  }
+}
